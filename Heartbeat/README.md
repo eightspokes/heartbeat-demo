@@ -17,20 +17,21 @@ This demo highlights how architectural tactics can be implemented to increase **
 
 ## Run the Monitor
 Make the script executable (first time only):
-chmod +x start-monitor.sh
+```chmod +x start-monitor.sh```
 
 Run the script
-./start-monitor.sh
+
+```./start-monitor.sh```
 
 The monitor binds to port 5000 and listens for heartbeat messages.
 If a previous monitor instance is running, it will be killed automatically to free the port.
 
 ## Run the Worker
 Make the script executable (first time only):
-chmod +x start-worker.sh
+```chmod +x start-worker.sh```
 
 Run the script:
-./start-worker.sh
+```./start-worker.sh```
 
 The worker sends heartbeat messages every  second to the monitor.
 It randomly stops sending heartbeats within 60 seconds to simulate a crash, demonstrating fault detection.
