@@ -17,28 +17,23 @@ This demo highlights how architectural tactics can be implemented to increase **
 
 ## Run the Monitor
 Make the script executable (first time only):
-```chmod +x start-monitor.sh
-```
+chmod +x start-monitor.sh
 
 Run the script
-```./start-monitor.sh
-```
+./start-monitor.sh
 
 The monitor binds to port 5000 and listens for heartbeat messages.
 If a previous monitor instance is running, it will be killed automatically to free the port.
 
 ## Run the Worker
 Make the script executable (first time only):
-```chmod +x start-worker.sh
-```
+chmod +x start-worker.sh
 
-Run the script
-```./start-worker.sh
-```
+Run the script:
+./start-worker.sh
 
 The worker sends heartbeat messages every  second to the monitor.
 It randomly stops sending heartbeats within 60 seconds to simulate a crash, demonstrating fault detection.
-
 
 ## Observed Behaviour 
 
@@ -47,7 +42,6 @@ While the worker is alive, the monitor prints: Heartbeat received
 When the worker stops sending heartbeats, the monitor prints: ALERT: Heartbeat from Obstacle Detection Module is missed!
 
 Both processes run independently, simulating a distributed system where components can fail and be detected without impacting other modules.
-
 
 ## Design Notes
 
